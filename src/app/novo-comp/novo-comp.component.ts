@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./novo-comp.component.css']
 })
 export class NovoCompComponent implements OnInit {
-
-  constructor() { }
+  allowNewServer = false;
+  serverCreationStatus = "no server created";
+  constructor() {
+    setTimeout(() => { this.allowNewServer = true; }, 2000);
+  }
 
   ngOnInit() {
   }
-
+  onCreateServer() {
+    this.serverCreationStatus = "Server was created!";
+  }
+  onUpdateServerName() {
+    console.log("aaaaa");
+ //   console.log(event);
+  }
 }

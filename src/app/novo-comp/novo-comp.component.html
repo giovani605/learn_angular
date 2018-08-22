@@ -1,3 +1,8 @@
-<h3>
-  novo-comp works!
-</h3>
+<label>Server Name</label>
+<input type="text" class="form-control" style="width: 400px" (input)="onUpdateServerName()">
+<div>
+  <button class="btn btn-primary" [disabled]="!allowNewServer"
+  (click)="onCreateServer()">Add Server</button>
+  <p>Server Creation:  {{serverCreationStatus}}</p>
+  
+</div>
