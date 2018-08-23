@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class NovoCompComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = "no server created";
+  serverName = "teste";
+  serverCreated = false;
   constructor() {
     setTimeout(() => { this.allowNewServer = true; }, 2000);
   }
@@ -15,10 +17,12 @@ export class NovoCompComponent implements OnInit {
   ngOnInit() {
   }
   onCreateServer() {
-    this.serverCreationStatus = "Server was created!";
+    this.serverCreationStatus = "Server was created! " + this.serverName ;
+    this.serverCreated = true;
   }
-  onUpdateServerName() {
-    console.log("aaaaa");
- //   console.log(event);
+  onUpdateServerName(event:any) {
+    this.serverName = (<HTMLInputElement>event.target).value;
+    
+    // Convertendo o valor
   }
 }
