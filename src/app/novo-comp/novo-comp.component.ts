@@ -10,6 +10,7 @@ export class NovoCompComponent implements OnInit {
   serverCreationStatus = "no server created";
   serverName = "teste";
   serverCreated = false;
+  servers = ['Testserver','Testeserver 2'];
   constructor() {
     setTimeout(() => { this.allowNewServer = true; }, 2000);
   }
@@ -18,6 +19,7 @@ export class NovoCompComponent implements OnInit {
   }
   onCreateServer() {
     this.serverCreationStatus = "Server was created! " + this.serverName ;
+    this.servers.push(this.serverName);
     this.serverCreated = true;
   }
   onUpdateServerName(event:any) {
